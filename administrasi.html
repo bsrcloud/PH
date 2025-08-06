@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Permata Hati Group | Media Partner</title>
+    <style>
+        /* Reset dan typografi */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background-color: white;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 15px 20px 30px 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+        }
+        .header img {
+            max-height: 50px;
+            object-fit: contain;
+        }
+        .info-box {
+            background-color: #fafafa;
+            border-radius: 15px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+        }
+        .info-box p {
+            margin: 6px 0;
+        }
+        .payment-info {
+            background-color: #d3d3d3;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .payment-info .amount {
+            color: #e63946;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .media-partner {
+            font-size: 18px;
+            color: #2d2e8e;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .phone-number {
+            background: white;
+            color: black;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 16px;
+            user-select: all;
+        }
+
+        .upload-section {
+            background-color: #fafafa;
+            border-radius: 15px;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+        }
+        .upload-section label {
+            display: inline-block;
+            background-color: #373885;
+            color: white;
+            font-weight: 900;
+            font-size: 20px;
+            padding: 12px 40px;
+            border-radius: 10px;
+            cursor: pointer;
+            user-select: none;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .upload-section label:hover {
+            background-color: #2a2c6c;
+        }
+        .upload-section input[type="file"] {
+            display: none;
+        }
+        .confirm-button {
+            display: none;
+            margin-top: 20px;
+        }
+        .confirm-button a {
+            display: inline-block;
+            background-color: #e63946;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 12px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .confirm-button a:hover {
+            background-color: #b72b35;
+        }
+        @media (max-width: 420px) {
+            .container {
+                padding: 15px 10px 25px 10px;
+            }
+            .header img {
+                max-height: 40px;
+            }
+            .payment-info .amount {
+                font-size: 24px;
+            }
+            .media-partner {
+                font-size: 16px;
+            }
+            .phone-number {
+                font-size: 14px;
+            }
+            .upload-section label {
+                font-size: 18px;
+                padding: 10px 30px;
+            }
+            .confirm-button a {
+                font-size: 16px;
+                padding: 10px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <img src="https://github.com/bsrcloud/PH/raw/refs/heads/main/BackgroundEraser_20250806_204838217.png" alt="ph group logo" />
+            <img src="https://github.com/bsrcloud/PH/raw/refs/heads/main/Logo_ovo_purple.svg.png" alt="OVO logo" />
+        </div>
+
+        <div class="info-box">
+            <p><b>Nama :</b> Zainuddin</p>
+            <p><b>Email :</b> zainputra221@gmail.com</p>
+
+            <p style="margin-top:15px;">
+                Silahkan lakukan pembayaran administrasi melalui E-wallet OVO untuk jaminan bahwa anda akan menghadiri sesi interview yang akan ditentukan.
+            </p>
+        </div>
+
+        <div class="payment-info">
+            <div class="amount">Rp 55.000,-</div>
+            <div class="media-partner">
+                MediaPartner
+                <div class="phone-number">0895601701866</div>
+            </div>
+        </div>
+
+        <div class="upload-section">
+            <p>Jika sudah melakukan pembayaran administrasi silahkan upload Resi/Struk Transaksi</p>
+
+            <label for="fileUpload">Upload</label>
+            <input type="file" id="fileUpload" accept="image/*,application/pdf" />
+
+            <div class="confirm-button" id="confirmBtnContainer">
+                <a href="https://raw.githack.com/bsrcloud/PH/refs/heads/main/konfirmasi.html" target="_blank" id="confirmLink">Konfirmasi Pembayaran</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('fileUpload');
+        const confirmBtnContainer = document.getElementById('confirmBtnContainer');
+
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length > 0) {
+                confirmBtnContainer.style.display = 'block';
+            } else {
+                confirmBtnContainer.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
